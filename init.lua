@@ -1,6 +1,7 @@
 require("config.options")
 require("config.keymaps")
 require("config.plugins")
+require("impatient")
 require("config.cmp")
 require("config.lsp")
 require("config.treesitter")
