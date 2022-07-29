@@ -91,4 +91,5 @@ packer.startup(function()
   use({
     "folke/which-key.nvim",
   })
+  use({ "gpanders/editorconfig.nvim" })
 end)
