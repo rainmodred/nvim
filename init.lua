@@ -10,6 +10,7 @@ require("config.project")
 require("config.which-key")
 
 -- -- Setup plugins
+require("bufferline").setup({})
 require("Comment").setup()
 require("ayu").setup({
   mirage = true, -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
