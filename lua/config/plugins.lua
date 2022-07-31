@@ -93,4 +93,8 @@ packer.startup(function()
     "folke/which-key.nvim",
   })
   use({ "gpanders/editorconfig.nvim" })
+  use({
+    "akinsho/toggleterm.nvim",
+    tag = "v2.*",
+  })
 end)

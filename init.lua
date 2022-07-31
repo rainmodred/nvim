@@ -10,8 +10,9 @@ require("config.autopairs")
 require("config.nvim-tree")
 require("config.project")
 require("config.which-key")
+require("config.toggleterm")
 
--- -- Setup plugins
+-- Setup plugins
 require("bufferline").setup({})
 require("Comment").setup()
 require("ayu").setup({
