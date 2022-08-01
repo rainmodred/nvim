@@ -17,7 +17,7 @@ opt.scrolloff = 8
 opt.sidescrolloff = 8
 opt.cursorline = true
 opt.fileformat = "unix"
-opt.timeoutlen = 500
+opt.timeoutlen = 1000
 --fix right nvim-tree
 opt.splitright = true
 
