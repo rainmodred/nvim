@@ -5,5 +5,10 @@ require("telescope").setup({
       "yarn.lock",
       "package-lock.json",
     },
+    layout_config = {
+      horizontal = {
+        preview_cutoff = 0,
+      },
+    },
   },
 })
