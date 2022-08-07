@@ -20,6 +20,7 @@ opt.fileformat = "unix"
 opt.timeoutlen = 1000
 --fix right nvim-tree
 opt.splitright = true
+opt.showmode = false
 
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
