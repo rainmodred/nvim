@@ -12,7 +12,6 @@ packer.startup(function()
 
   -- Themes
   use("lunarvim/darkplus.nvim")
-  use("Shatur/neovim-ayu")
   use({ "projekt0n/github-nvim-theme" })
 
   -- cmp plugins

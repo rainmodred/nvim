@@ -26,5 +26,3 @@ opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevelstart = 99
 
---vim.g.ayucolor = "light"
---vim.cmd([[colorscheme ayu]])
