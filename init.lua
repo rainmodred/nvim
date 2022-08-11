@@ -17,9 +17,10 @@ require("bufferline").setup({})
 require("Comment").setup()
 require("lualine").setup({
   options = {
-    theme = "github_dark_default",
+    -- theme = "github_dark_default",
+    theme = "tokyonight",
   },
 })
-require("github-theme").setup({
-  theme_style = "dark_default",
-})
+-- require("github-theme").setup({
+--   theme_style = "dark_default",
+-- })

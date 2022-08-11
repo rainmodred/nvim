@@ -13,6 +13,7 @@ packer.startup(function()
   -- Themes
   use("lunarvim/darkplus.nvim")
   use({ "projekt0n/github-nvim-theme" })
+  use("folke/tokyonight.nvim")
 
   -- cmp plugins
   use("hrsh7th/cmp-nvim-lsp")

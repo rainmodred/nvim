@@ -26,3 +26,5 @@ opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevelstart = 99
 
+vim.g.tokyonight_style = "night"
+vim.cmd([[colorscheme tokyonight]])
