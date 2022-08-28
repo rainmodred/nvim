@@ -42,11 +42,9 @@ packer.startup(function()
   })
 
   -- Comment
+  use("JoosepAlviste/nvim-ts-context-commentstring")
   use({
     "numToStr/Comment.nvim",
-    config = function()
-      require("Comment").setup()
-    end,
   })
 
   -- Treesitter
