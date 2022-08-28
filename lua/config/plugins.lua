@@ -73,9 +73,6 @@ packer.startup(function()
   -- Autopairs
   use({
     "windwp/nvim-autopairs",
-    config = function()
-      require("nvim-autopairs").setup({})
-    end,
   })
   use({
     "nvim-lualine/lualine.nvim",

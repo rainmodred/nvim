@@ -17,4 +17,7 @@ configs.setup({
     additional_vim_regex_highlighting = true,
   },
   indent = { enable = true, disable = { "yaml" } },
+  autopairs = {
+    enable = true,
+  },
 })
