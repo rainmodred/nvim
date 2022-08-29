@@ -1,0 +1,17 @@
+{
+  "console.log()": {
+    "prefix": "clog",
+    "body": ["console.log(${1})"],
+    "description": "console.log()"
+  },
+  "console.log1()": {
+    "prefix": "clogg",
+    "body": ["console.log('${1}:', ${1})"],
+    "description": "console.log()"
+  },
+  "Function Statement": {
+    "prefix": "func",
+    "body": ["function ${1:name}(${2:params}:${3:type}) {", "\t$0", "}"],
+    "description": "Function Statement"
+  }
+}
