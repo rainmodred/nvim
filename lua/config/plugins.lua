@@ -191,4 +191,5 @@ packer.startup(function()
       })
     end,
   })
+  use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 end)

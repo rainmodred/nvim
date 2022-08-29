@@ -23,6 +23,7 @@ require("lualine").setup({
     theme = "tokyonight",
   },
 })
+require("diffview").setup({})
 -- require("github-theme").setup({
 --   theme_style = "dark_default",
 -- })
