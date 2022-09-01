@@ -11,8 +11,8 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
   debug = true,
   sources = {
-    --formatting.prettierd,
-    formatting.prettier,
+    formatting.prettierd,
+    -- formatting.prettier,
     -- formatting.prettier.with({
     --   filetypes = {
     --     "javascript",
