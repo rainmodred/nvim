@@ -11,6 +11,7 @@ require("config.nvim-tree")
 require("config.project")
 require("config.which-key")
 require("config.toggleterm")
+require("config.neoscroll")
 
 -- Setup plugins
 require("bufferline").setup({})
