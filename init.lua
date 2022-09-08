@@ -12,6 +12,7 @@ require("config.project")
 require("config.which-key")
 require("config.toggleterm")
 require("config.neoscroll")
+require("config.theme")
 
 -- Setup plugins
 require("bufferline").setup({})
