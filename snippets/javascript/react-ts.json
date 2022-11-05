@@ -4,7 +4,7 @@
     "body": [
       "interface ${1:${TM_FILENAME_BASE}}Props {}",
       "",
-      "export default function ${1:TM_FILENAME_BASE}}({}:${1:${TM_FILENAME_BASE}}Props): JSX.Element {",
+      "export default function ${1:TM_FILENAME_BASE}({}:${1:${TM_FILENAME_BASE}}Props): JSX.Element {",
       "\treturn (",
       "\t\t<div>",
       "\t\t\t$0",
