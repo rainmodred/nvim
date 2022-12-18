@@ -77,3 +77,8 @@ keymap("n", "<S-q>", "<cmd>bdelete<CR>", opts)
 
 -- Delete prev word
 keymap("i", "<C-H>", "<C-W>", opts)
+
+-- Paste with deleting selected text
+keymap("x", "<leader>p", [["_dP]], opts)
+-- Replace words
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
