@@ -2,9 +2,9 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 keymap("n", "<c-s>", ":w<CR>", {})
 keymap("i", "<c-s>", "<Esc>:w<CR>a", {})
@@ -36,10 +36,17 @@ keymap("v", "<A-k>", ":m '<-2<CR>gv-gv", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>fw", ":Telescope live_grep<CR>", opts)
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+vim.keymap.set("n", "<leader>fF", function()
+  require("telescope.builtin").find_files({ hidden = true, no_ignore = true })
+end, { desc = "Search all files" })
+vim.keymap.set("n", "<leader>fw", builtin.live_grep, {})
+vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+vim.keymap.set("n", "<leader>gt", builtin.git_status, { desc = "Git status" })
+vim.keymap.set("n", "<leader>gb", require("telescope.builtin").git_branches, { desc = "Git branches" })
+vim.keymap.set("n", "<leader>gc", require("telescope.builtin").git_commits, { desc = "Git commits" })
 
 -- Buuferline
 -- Tab switch buffer
