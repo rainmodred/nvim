@@ -10,6 +10,5 @@ require("telescope").setup({
         preview_cutoff = 0,
       },
     },
-    initial_mode = "normal",
   },
 })
