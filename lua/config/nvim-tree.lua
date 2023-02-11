@@ -4,59 +4,19 @@ if not status_ok then
 end
 
 nvim_tree.setup({
-  update_focused_file = {
-    enable = true,
-    update_cwd = false,
-  },
-  filters = {
-    custom = {
-      ".git$",
-      "node_modules",
-      ".vscode$",
-      "package-lock.json",
-    },
-  },
+  sort_by = "case_sensitive",
   view = {
     width = 30,
-    height = 30,
-    side = "left",
-  },
-  renderer = {
-    icons = {
-      webdev_colors = true,
-      git_placement = "before",
-      padding = " ",
-      symlink_arrow = " ➛ ",
-      show = {
-        file = true,
-        folder = true,
-        folder_arrow = true,
-        git = true,
-      },
-      glyphs = {
-        default = "",
-        symlink = "",
-        bookmark = "",
-        folder = {
-          arrow_closed = "",
-          arrow_open = "",
-          default = "",
-          open = "",
-          empty = "",
-          empty_open = "",
-          symlink = "",
-          symlink_open = "",
-        },
-        git = {
-          unstaged = "✗",
-          staged = "✓",
-          unmerged = "",
-          renamed = "➜",
-          untracked = "★",
-          deleted = "",
-          ignored = "◌",
-        },
+    mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
       },
     },
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
   },
 })

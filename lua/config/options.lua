@@ -26,3 +26,5 @@ opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevelstart = 99
 opt.wrap = false
+opt.hlsearch = false
+opt.incsearch = true

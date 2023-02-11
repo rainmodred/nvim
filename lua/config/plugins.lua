@@ -29,7 +29,8 @@ packer.startup(function()
 
   -- lsp
   use({
-    "williamboman/nvim-lsp-installer",
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
   })
   use("jose-elias-alvarez/null-ls.nvim")
@@ -59,9 +60,9 @@ packer.startup(function()
 
   -- Nvim tree
   use({
-    "kyazdani42/nvim-tree.lua",
+    "nvim-tree/nvim-tree.lua",
     requires = {
-      "kyazdani42/nvim-web-devicons", -- optional, for file icons
+      "nvim-tree/nvim-web-devicons", -- optional, for file icons
     },
     tag = "nightly", -- optional, updated every week. (see issue #1193)
   })
@@ -72,6 +73,7 @@ packer.startup(function()
   -- Autopairs
   use({
     "windwp/nvim-autopairs",
+    "windwp/nvim-ts-autotag",
   })
   use({
     "nvim-lualine/lualine.nvim",
@@ -98,11 +100,12 @@ packer.startup(function()
     config = function()
       require("gitsigns").setup({
         signs = {
-          add = { hl = "GitSignsAdd", text = "│", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
-          change = { hl = "GitSignsChange", text = "│", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
-          delete = { hl = "GitSignsDelete", text = "_", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-          topdelete = { hl = "GitSignsDelete", text = "‾", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-          changedelete = { hl = "GitSignsChange", text = "~", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
+          add = { text = "+" },
+          change = { text = "~" },
+          delete = { text = "_" },
+          topdelete = { text = "‾" },
+          changedelete = { text = "~" },
+          untracked = { text = "┆" },
         },
         signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
         numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
@@ -136,7 +139,6 @@ packer.startup(function()
         yadm = {
           enable = false,
         },
-
         on_attach = function(bufnr)
           local gs = package.loaded.gitsigns
 
