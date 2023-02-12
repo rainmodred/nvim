@@ -20,7 +20,7 @@ mason.setup({
   },
 })
 
-local servers = { "jsonls", "sumneko_lua", "tsserver", "eslint", "cssls", "cssmodules_ls", "svelte", "tailwindcss" }
+local servers = { "jsonls", "lua_ls", "tsserver", "eslint", "cssls", "cssmodules_ls", "svelte", "tailwindcss" }
 mason_lspconfig.setup({
   ensure_installed = servers,
 })
