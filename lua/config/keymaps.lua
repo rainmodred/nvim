@@ -88,7 +88,8 @@ keymap("i", "<C-H>", "<C-W>", opts)
 -- Paste with deleting selected text
 keymap("x", "<leader>p", [["_dP]], opts)
 -- Replace words
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Rename word" })
+
 -- Diffview
 vim.keymap.set("n", "<leader><leader>v", function()
   if next(require("diffview.lib").views) == nil then
