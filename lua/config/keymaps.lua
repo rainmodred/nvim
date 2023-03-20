@@ -89,3 +89,11 @@ keymap("i", "<C-H>", "<C-W>", opts)
 keymap("x", "<leader>p", [["_dP]], opts)
 -- Replace words
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+-- Diffview
+vim.keymap.set("n", "<leader><leader>v", function()
+  if next(require("diffview.lib").views) == nil then
+    vim.cmd("DiffviewOpen")
+  else
+    vim.cmd("DiffviewClose")
+  end
+end, { desc = "Open diffview" })
