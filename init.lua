@@ -3,16 +3,15 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 require("config.options")
-require("config.keymaps")
 require("config.plugins")
-require("impatient")
+require("config.keymaps")
+
 require("config.cmp")
 require("config.lsp")
 require("config.treesitter")
 require("config.telescope")
 require("config.autopairs")
 require("config.nvim-tree")
-require("config.project")
 require("config.which-key")
 require("config.toggleterm")
 require("config.neoscroll")
@@ -35,9 +34,9 @@ require("diffview").setup({})
 -- })
 function leave_snippet()
   if
-    ((vim.v.event.old_mode == "s" and vim.v.event.new_mode == "n") or vim.v.event.old_mode == "i")
-    and require("luasnip").session.current_nodes[vim.api.nvim_get_current_buf()]
-    and not require("luasnip").session.jump_active
+      ((vim.v.event.old_mode == "s" and vim.v.event.new_mode == "n") or vim.v.event.old_mode == "i")
+      and require("luasnip").session.current_nodes[vim.api.nvim_get_current_buf()]
+      and not require("luasnip").session.jump_active
   then
     require("luasnip").unlink_current()
   end
