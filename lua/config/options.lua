@@ -18,6 +18,7 @@ opt.sidescrolloff = 8
 opt.cursorline = true
 opt.fileformat = "unix"
 opt.timeoutlen = 500
+-- opt.undofile = drue
 --fix right nvim-tree
 opt.splitright = true
 opt.showmode = false

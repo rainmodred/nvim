@@ -1,4 +1,5 @@
 local opts = { noremap = true, silent = true }
+
 local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
@@ -98,3 +99,7 @@ vim.keymap.set("n", "<leader><leader>v", function()
     vim.cmd("DiffviewClose")
   end
 end, { desc = "Open diffview" })
+
+vim.keymap.set("n", "gh", "<nop>")
+
+vim.keymap.set({ "n", "v" }, "<S-j>", "3j", { silent = true })

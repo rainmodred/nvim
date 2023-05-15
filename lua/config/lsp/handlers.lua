@@ -56,33 +56,30 @@ local function lsp_highlight_document(client)
   -- end
 end
 
-local function lsp_keymaps(bufnr)
+local function lsp_keymaps()
   local opts = { noremap = true, silent = true }
-  local keymap = vim.api.nvim_buf_set_keymap
-  keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-  keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-  keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-  keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-  keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-  keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-  keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting_sync()<cr>", opts)
-  keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
-  keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
-  keymap(bufnr, "n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-  keymap(bufnr, "n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
-  keymap(bufnr, "n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
-  keymap(bufnr, "n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-  keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-  keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+  vim.keymap.set("n", "gD", vim.lsp.buf.declaration(), opts)
+  vim.keymap.set("n", "gd", vim.lsp.buf.definition(), opts)
+  vim.keymap.set("n", "K", vim.lsp.buf.hover(), opts)
+  vim.keymap.set("n", "gI", vim.lsp.buf.implementation(), opts)
+  vim.keymap.set("n", "gr", vim.lsp.buf.references(), opts)
+  vim.keymap.set("n", "gl", vim.diagnostic.open_float(), opts)
+  vim.keymap.set("n", "<leader>lf", vim.lsp.buf.formatting_sync(), opts)
+  vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action(), opts)
+  vim.keymap.set("n", "<leader>lj", vim.diagnostic.goto_next({ buffer = 0 }), opts)
+  vim.keymap.set("n", "<leader>lk", vim.diagnostic.goto_prev({ buffer = 0 }), opts)
+  vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename(), opts)
+  vim.keymap.set("n", "<leader>ls", vim.lsp.buf.signature_help(), opts)
+  vim.keymap.set("n", "<leader>lq", vim.diagnostic.setloclist(), opts)
 end
 
-M.on_attach = function(client, bufnr)
+M.on_attach = function(client)
   -- vim.notify(client.name .. " starting...")
   -- TODO: refactor this into a method that checks if string in list
   if client.name == "tsserver" or "sumneko_lua" or "eslint" then
     client.server_capabilities.document_formatting = false
   end
-  lsp_keymaps(bufnr)
+  lsp_keymaps()
   lsp_highlight_document(client)
 end
 
