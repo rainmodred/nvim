@@ -60,7 +60,7 @@ local function lsp_keymaps()
   local opts = { noremap = true, silent = true }
   vim.keymap.set("n", "gD", vim.lsp.buf.declaration(), opts)
   vim.keymap.set("n", "gd", vim.lsp.buf.definition(), opts)
-  vim.keymap.set("n", "K", vim.lsp.buf.hover(), opts)
+  vim.keymap.set("n", "gh", vim.lsp.buf.hover(), opts)
   vim.keymap.set("n", "gI", vim.lsp.buf.implementation(), opts)
   vim.keymap.set("n", "gr", vim.lsp.buf.references(), opts)
   vim.keymap.set("n", "gl", vim.diagnostic.open_float(), opts)

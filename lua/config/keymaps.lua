@@ -103,3 +103,4 @@ end, { desc = "Open diffview" })
 vim.keymap.set("n", "gh", "<nop>")
 
 vim.keymap.set({ "n", "v" }, "<S-j>", "3j", { silent = true })
+vim.keymap.set({ "n", "v" }, "<S-k>", "3k", { silent = true })
