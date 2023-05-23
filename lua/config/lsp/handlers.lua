@@ -60,14 +60,15 @@ local function lsp_keymaps()
   local opts = { noremap = true, silent = true }
   vim.keymap.set("n", "gD", vim.lsp.buf.declaration(), opts)
   vim.keymap.set("n", "gd", vim.lsp.buf.definition(), opts)
-  vim.keymap.set("n", "gh", vim.lsp.buf.hover(), opts)
+  vim.keymap.set("n", "gh", vim.lsp.buf.hover, opts)
   vim.keymap.set("n", "gI", vim.lsp.buf.implementation(), opts)
   vim.keymap.set("n", "gr", vim.lsp.buf.references(), opts)
   vim.keymap.set("n", "gl", vim.diagnostic.open_float(), opts)
   vim.keymap.set("n", "<leader>lf", vim.lsp.buf.formatting_sync(), opts)
   vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action(), opts)
-  vim.keymap.set("n", "<leader>lj", vim.diagnostic.goto_next({ buffer = 0 }), opts)
-  vim.keymap.set("n", "<leader>lk", vim.diagnostic.goto_prev({ buffer = 0 }), opts)
+  --moved to keymaps
+  -- vim.keymap.set("n", "<leader>lj", vim.diagnostic.goto_next({ buffer = 0 }), opts)
+  -- vim.keymap.set("n", "<leader>lk", vim.diagnostic.goto_prev({ buffer = 0 }), opts)
   vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename(), opts)
   vim.keymap.set("n", "<leader>ls", vim.lsp.buf.signature_help(), opts)
   vim.keymap.set("n", "<leader>lq", vim.diagnostic.setloclist(), opts)
@@ -76,7 +77,7 @@ end
 M.on_attach = function(client)
   -- vim.notify(client.name .. " starting...")
   -- TODO: refactor this into a method that checks if string in list
-  if client.name == "tsserver" or "sumneko_lua" or "eslint" then
+  if client.name == "tsserver" or "lua_ls" or "eslint" then
     client.server_capabilities.document_formatting = false
   end
   lsp_keymaps()

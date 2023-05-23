@@ -100,7 +100,13 @@ vim.keymap.set("n", "<leader><leader>v", function()
   end
 end, { desc = "Open diffview" })
 
-vim.keymap.set("n", "gh", "<nop>")
-
+-- Faster scroll
 vim.keymap.set({ "n", "v" }, "<S-j>", "3j", { silent = true })
 vim.keymap.set({ "n", "v" }, "<S-k>", "3k", { silent = true })
+
+-- LSP
+vim.keymap.set("n", "gl", vim.diagnostic.open_float)
+vim.keymap.set("n", "gh", vim.lsp.buf.hover)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+-- vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)

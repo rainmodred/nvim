@@ -12,15 +12,6 @@ null_ls.setup({
   debug = true,
   sources = {
     formatting.prettierd,
-    -- formatting.prettier,
-    -- formatting.prettier.with({
-    --   filetypes = {
-    --     "javascript",
-    --     "html",
-    --     "css",
-    --     "json",
-    --   },
-    -- }),
     formatting.stylua,
   },
   on_attach = function(client, bufnr)

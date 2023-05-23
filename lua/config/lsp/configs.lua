@@ -30,9 +30,9 @@ for _, server in pairs(servers) do
     on_attach = require("config.lsp.handlers").on_attach,
     capabilities = require("config.lsp.handlers").capabilities,
   }
-  if server == "sumneko_lua" then
-    local sumneko_opts = require("config.lsp.settings.sumneko_lua")
-    opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+  if server == "lua_ls" then
+    local lua_opts = require("config.lsp.settings.lua_ls")
+    opts = vim.tbl_deep_extend("force", lua_opts, opts)
   end
   lspconfig[server].setup(opts)
 end
