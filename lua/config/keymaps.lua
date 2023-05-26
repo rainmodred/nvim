@@ -107,6 +107,6 @@ vim.keymap.set({ "n", "v" }, "<S-k>", "3k", { silent = true })
 -- LSP
 vim.keymap.set("n", "gl", vim.diagnostic.open_float)
 vim.keymap.set("n", "gh", vim.lsp.buf.hover)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Diagnostic goto prev" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Diagnostic goto next" })
 -- vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)

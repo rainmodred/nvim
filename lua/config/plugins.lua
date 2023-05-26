@@ -12,11 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-
-  "lewis6991/impatient.nvim",
   "nvim-lua/plenary.nvim",
   -- Themes
-  "lunarvim/darkplus.nvim",
   { "projekt0n/github-nvim-theme" },
   "folke/tokyonight.nvim",
   -- cmp plugins
@@ -92,6 +89,7 @@ local plugins = {
     "lewis6991/gitsigns.nvim",
   },
   { "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim" },
+  -- { "lukas-reineke/indent-blankline.nvim" },
 }
 
 local opts = {}
