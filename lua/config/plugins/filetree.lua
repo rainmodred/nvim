@@ -10,7 +10,13 @@ return {
     'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
     'MunifTanjim/nui.nvim',
   },
-  config = function()
-    require('neo-tree').setup({})
+  opts = {
+    filesystem = {
+      follow_current_file = true,
+    },
+  },
+  config = function(_, opts)
+    vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+    require('neo-tree').setup(opts)
   end,
 }

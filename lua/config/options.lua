@@ -37,18 +37,22 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 vim.o.relativenumber = true
--- vim.o.expandtab = true
 
--- vim.o.shiftwidth = 3
--- vim.o.softtabstop = 3
--- vim.o.fileencoding = "utf-8"
+vim.o.fileencoding = 'utf-8'
+vim.o.fileformat = 'unix'
+
+--fix filetree
+vim.o.splitright = true
+vim.o.nohidden = false
+
+-- vim.o.expandtab = true
+-- vim.o.tabstop = 2
+-- vim.o.shiftwidth = 2
+-- vim.o.softtabstop = 2
 -- vim.o.completeopt = { "menuone", "noselect" }
 -- vim.o.scrolloff = 8
 -- vim.o.sidescrolloff = 8
 -- vim.o.cursorline = true
--- vim.o.fileformat = "unix"
--- --fix right nvim-tree
--- vim.o.splitright = true
 -- vim.o.showmode = false
 
 -- vim.o.foldmethod = "expr"
