@@ -16,10 +16,8 @@ vim.keymap.set('n', '<c-j>', '<c-w>j', opts)
 vim.keymap.set('n', '<c-h>', '<c-w>h', opts)
 vim.keymap.set('n', '<c-k>', '<c-w>k', opts)
 vim.keymap.set('n', '<c-l>', '<c-w>l', opts)
-
--- -- keymap("n", "<leader>e", ":Lex 30<cr>", opts)
--- vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', opts)
-
+vim.keymap.set({ 'n', 'x', 'o' }, '<leader>h', '^')
+vim.keymap.set({ 'n', 'x', 'o' }, '<leader>l', 'g_')
 -- Resize with arrows
 vim.keymap.set('n', '<C-Up>', ':resize +2<CR>', opts)
 vim.keymap.set('n', '<C-Down>', ':resize -2<CR>', opts)
@@ -80,3 +78,16 @@ vim.keymap.set('i', '<C-H>', '<C-W>', opts)
 vim.keymap.set('x', '<leader>p', [["_dP]], opts)
 -- Replace words
 vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Telescope
+vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'Find files' })
+vim.keymap.set('n', '<leader>fF', require('telescope.builtin').git_files, { desc = 'Git files' })
+vim.keymap.set('n', '<leader>fw', require('telescope.builtin').live_grep, { desc = 'Live grep' })
+vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = 'Find buffers' })
+vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = 'Help tags' })
+
+-- LSP
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
