@@ -1,30 +1,7 @@
+-- Options are automatically loaded before lazy.nvim startup
+-- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
+-- Add any additional options here
 local opt = vim.opt
 
-opt.number = true
-opt.signcolumn = "yes"
-opt.relativenumber = true
-opt.mouse = "a"
-opt.expandtab = true
-opt.shiftwidth = 2
-opt.softtabstop = 2
-opt.ignorecase = true
-opt.smartcase = true
-opt.fileencoding = "utf-8"
-opt.termguicolors = true
-opt.completeopt = { "menuone", "noselect" }
-opt.clipboard = "unnamedplus"
-opt.scrolloff = 8
-opt.sidescrolloff = 8
-opt.cursorline = true
-opt.fileformat = "unix"
-opt.timeoutlen = 500
---fix right nvim-tree
-opt.splitright = true
-opt.showmode = false
-
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldlevelstart = 99
-opt.wrap = false
+opt.formatoptions:remove({ "c", "r", "o" })
 opt.hlsearch = false
-opt.incsearch = true
