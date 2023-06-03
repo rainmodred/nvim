@@ -2,7 +2,7 @@ return {
   "neovim/nvim-lspconfig",
   opts = {
     diagnostics = {
-      underline = false,
+      underline = true,
       virtual_text = false,
     },
   },
