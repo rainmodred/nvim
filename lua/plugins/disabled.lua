@@ -7,4 +7,5 @@ return {
   { "folke/trouble.nvim", enabled = false },
   { "SmiteshP/nvim-navic", enabled = false },
   { "stevearc/dressing.nvim", enabled = false },
+  { "rafamadriz/friendly-snippets", enabled = false },
 }
