@@ -5,4 +5,5 @@
 local opt = vim.opt
 
 opt.wildmode = "full"
+opt.conceallevel = 0
 -- opt.hlsearch = false
