@@ -21,3 +21,5 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find files" })
+
+vim.keymap.del("n", "<leader>uc")
