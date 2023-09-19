@@ -2,7 +2,7 @@ return {
   "echasnovski/mini.bufremove",
   keys = {
     {
-      "<leader>d",
+      "<C-w>",
       function()
         require("mini.bufremove").delete(0, false)
       end,
