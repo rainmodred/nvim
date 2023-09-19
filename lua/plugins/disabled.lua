@@ -8,4 +8,5 @@ return {
   { "SmiteshP/nvim-navic", enabled = false },
   { "stevearc/dressing.nvim", enabled = false },
   { "rafamadriz/friendly-snippets", enabled = false },
+  { "folke/flash.nvim", enabled = false },
 }
