@@ -18,3 +18,6 @@ vim.keymap.set("n", "<leader>se", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left>
 
 -- Paste with deleting selected text
 vim.keymap.set("x", "<leader>p", [["_dP]])
+
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find files" })
