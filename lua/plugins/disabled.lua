@@ -1,5 +1,6 @@
 return {
   { "echasnovski/mini.ai", enabled = false },
+  { "echasnovski/mini.pairs", enabled = false },
   { "ggandor/flit.nvim", enabled = false },
   { "ggandor/leap.nvim", enabled = false },
   { "RRethy/vim-illuminate", enabled = false },
