@@ -10,5 +10,4 @@ return {
   { "stevearc/dressing.nvim", enabled = false },
   { "rafamadriz/friendly-snippets", enabled = false },
   { "folke/flash.nvim", enabled = false },
-  { "ibhagwan/fzf-lua", enabled = false },
 }
