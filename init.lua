@@ -35,7 +35,6 @@ require("lazy").setup({
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require("mini.surround").setup()
-      require("mini.statusline").setup()
     end,
   },
   require("plugins.treesitter"),
@@ -49,6 +48,7 @@ require("lazy").setup({
   require("plugins.neo-tree"),
   require("plugins.gitsigns"),
   -- require("plugins.theme"),
+  require("plugins.statusline"),
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
