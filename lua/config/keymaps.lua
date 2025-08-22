@@ -51,3 +51,6 @@ vim.keymap.set("n", "<leader>sg", "<cmd>FzfLua live_grep<CR>", { desc = "Live Gr
 vim.keymap.set("n", "<leader>sb", "<cmd>FzfLua buffers<CR>", { desc = "Buffer Lines" })
 vim.keymap.set("n", "<leader>sh", "<cmd>FzfLua help_tags<CR>", { desc = "Search help" })
 vim.keymap.set("n", "<leader>sk", "<cmd>FzfLua keymaps<CR>", { desc = "Search Keymaps" })
+-- Split
+vim.keymap.set("n", "<leader>-", "<cmd>split<CR>", { desc = "Split below" })
+vim.keymap.set("n", "<leader>|", "<cmd>vsplit<CR>", { desc = "Split right" })
