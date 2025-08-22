@@ -1,8 +1,7 @@
-return { -- Highlight, edit, and navigate code
+return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   main = "nvim-treesitter.configs", -- Sets main module to use for opts
-  -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
   opts = {
     ensure_installed = {
       "bash",
@@ -19,7 +18,6 @@ return { -- Highlight, edit, and navigate code
       "vue",
       "query",
     },
-    -- Autoinstall languages that are not installed
     auto_install = true,
     highlight = {
       enable = true,
@@ -29,10 +27,35 @@ return { -- Highlight, edit, and navigate code
     incremental_selection = {
       enable = true,
       keymaps = {
-        init_selection = "<leader>is",
-        node_incremental = "<leader>ni",
-        scope_incremental = "<leader>si",
-        node_decremental = "<leader>nd",
+        init_selection = "<C-space>",
+        node_incremental = "<C-space>",
+        scope_incremental = false,
+        node_decremental = "<bs>",
+      },
+    },
+    textobjects = {
+      move = {
+        enable = true,
+        goto_next_start = {
+          ["]f"] = "@function.outer",
+          ["]c"] = "@class.outer",
+          ["]a"] = "@parameter.inner",
+        },
+        goto_next_end = {
+          ["]F"] = "@function.outer",
+          ["]C"] = "@class.outer",
+          ["]A"] = "@parameter.inner",
+        },
+        goto_previous_start = {
+          ["[f"] = "@function.outer",
+          ["[c"] = "@class.outer",
+          ["[a"] = "@parameter.inner",
+        },
+        goto_previous_end = {
+          ["[F"] = "@function.outer",
+          ["[C"] = "@class.outer",
+          ["[A"] = "@parameter.inner",
+        },
       },
     },
   },

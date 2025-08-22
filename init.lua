@@ -39,6 +39,7 @@ require("lazy").setup({
     end,
   },
   require("plugins.treesitter"),
+  require("plugins.treesitter-textobjects"),
 
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.debug',
