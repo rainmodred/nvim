@@ -17,6 +17,7 @@ return { -- Highlight, edit, and navigate code
       "typescript",
       "go",
       "vue",
+      "query",
     },
     -- Autoinstall languages that are not installed
     auto_install = true,
@@ -25,5 +26,14 @@ return { -- Highlight, edit, and navigate code
       additional_vim_regex_highlighting = { "ruby" },
     },
     indent = { enable = true, disable = { "ruby" } },
+    incremental_selection = {
+      enable = true,
+      keymaps = {
+        init_selection = "<leader>is",
+        node_incremental = "<leader>ni",
+        scope_incremental = "<leader>si",
+        node_decremental = "<leader>nd",
+      },
+    },
   },
 }
