@@ -1,60 +1,73 @@
---nvim tree
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 require("config.options")
 require("config.keymaps")
-require("config.plugins")
-require("impatient")
-require("config.cmp")
-require("config.lsp")
-require("config.treesitter")
-require("config.telescope")
-require("config.autopairs")
-require("config.nvim-tree")
-require("config.project")
-require("config.which-key")
-require("config.toggleterm")
-require("config.neoscroll")
-require("config.theme")
+require("config.autocmds")
 
--- Setup plugins
-require("bufferline").setup({})
-require("Comment").setup({
-  pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-})
-require("lualine").setup({
-  options = {
-    -- theme = "github_dark_default",
-    theme = "tokyonight",
-  },
-})
-require("diffview").setup({})
--- require("github-theme").setup({
---   theme_style = "dark_default",
--- })
-function leave_snippet()
-  if
-    ((vim.v.event.old_mode == "s" and vim.v.event.new_mode == "n") or vim.v.event.old_mode == "i")
-    and require("luasnip").session.current_nodes[vim.api.nvim_get_current_buf()]
-    and not require("luasnip").session.jump_active
-  then
-    require("luasnip").unlink_current()
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    error("Error cloning lazy.nvim:\n" .. out)
   end
 end
+---@type vim.Option
+local rtp = vim.opt.rtp
+rtp:prepend(lazypath)
 
--- stop snippets when you leave to normal mode
-vim.api.nvim_command([[
-    autocmd ModeChanged * lua leave_snippet()
-]])
+require("lazy").setup({
+  --TODO: remove?
+  -- "NMAC427/guess-indent.nvim", -- Detect tabstop and shiftwidth automatically
 
--- [[ Highlight on yank ]]
--- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
-vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = "*",
+  require("plugins.fidget"),
+  require("plugins.which-key"),
+  require("plugins.fzf-lua"),
+  require("plugins.lazydev"),
+  require("plugins.lsp"),
+  require("plugins.conform"),
+  require("plugins.todo-comments"),
+
+  {
+    "echasnovski/mini.nvim",
+    version = "*",
+    config = function()
+      -- Add/delete/replace surroundings (brackets, quotes, etc.)
+      --
+      -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
+      -- - sd'   - [S]urround [D]elete [']quotes
+      -- - sr)'  - [S]urround [R]eplace [)] [']
+      require("mini.surround").setup()
+    end,
+  },
+  require("plugins.treesitter"),
+  require("plugins.treesitter-textobjects"),
+
+  -- require 'kickstart.plugins.lint',
+  -- require 'kickstart.plugins.debug',
+  require("plugins.cmp"),
+  require("plugins.indent_line"),
+  require("plugins.autopairs"),
+  require("plugins.neo-tree"),
+  require("plugins.gitsigns"),
+  require("plugins.theme"),
+  require("plugins.statusline"),
+}, {
+  ui = {
+    icons = vim.g.have_nerd_font and {} or {
+      cmd = "⌘",
+      config = "🛠",
+      event = "📅",
+      ft = "📂",
+      init = "⚙",
+      keys = "🗝",
+      plugin = "🔌",
+      runtime = "💻",
+      require = "🌙",
+      source = "📄",
+      start = "🚀",
+      task = "📌",
+      lazy = "💤 ",
+    },
+  },
 })
+-- The line beneath this is called `modeline`. See `:help modeline`
+-- vim: ts=2 sts=2 sw=2 et
