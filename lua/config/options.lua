@@ -15,7 +15,6 @@ vim.schedule(function()
 end)
 
 vim.o.breakindent = true
-
 vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
@@ -24,7 +23,6 @@ vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 vim.o.splitright = true
 vim.o.splitbelow = true
-
 vim.o.list = true
 vim.o.inccommand = "nosplit"
 vim.o.cursorline = true
