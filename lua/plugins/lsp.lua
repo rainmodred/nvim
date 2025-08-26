@@ -16,7 +16,7 @@ return {
           vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
         end
 
-        map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+        map("<F2>", vim.lsp.buf.rename, "[R]e[n]ame")
         map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
 
         map("gr", require("fzf-lua").lsp_references, "[G]oto [R]eferences")
