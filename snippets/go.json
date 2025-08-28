@@ -1,0 +1,19 @@
+{
+	"fmt.Println": {
+		"prefix": "fp",
+		"body": [
+			"fmt.Println($1)",
+			"$2"
+		],
+		"description": "fmt.Println()"
+	},
+	"error": {
+		"prefix": "ife",
+		"body": [
+			"if err != nil {",
+			"  log.Fatal(err)",
+			"}"
+		],
+		"description": "Fast error"
+	}
+}
