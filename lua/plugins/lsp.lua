@@ -132,12 +132,12 @@ return {
           local server = servers[server_name] or {}
 
           if server_name == "ts_ls" then
-            print(server_name)
+            -- TODO:
+            -- print(server_name)
 
             -- server.capabilities = false
             -- server.capabilities.textDocument.formatting = false
             -- server.capabilities.textDocument.rangeFormatting = false
-            -- TODO:
           end
 
           -- This handles overriding only values explicitly passed
