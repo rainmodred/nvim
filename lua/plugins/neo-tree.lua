@@ -14,8 +14,15 @@ return {
     { "<leader>e", ":Neotree toggle right<CR>", desc = "NeoTree toggle", silent = true },
   },
   opts = {
+    close_if_last_window = true,
     window = {
       position = "right",
+    },
+    filesystem = {
+      follow_current_file = {
+        enabled = true,
+        leave_dirs_open = true,
+      },
     },
   },
 }
