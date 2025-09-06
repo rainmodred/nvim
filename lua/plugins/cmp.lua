@@ -74,6 +74,11 @@ return {
             preselect = false,
           },
         },
+        accept = {
+          auto_brackets = {
+            enabled = false,
+          },
+        },
       },
 
       sources = {
