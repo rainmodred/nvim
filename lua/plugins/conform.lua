@@ -34,6 +34,7 @@ return { -- Autoformat
     formatters_by_ft = {
       lua = { "stylua" },
       html = { "prettierd", "prettier", stop_after_first = true },
+      css = { "prettierd", "prettier", stop_after_first = true },
       templ = { "templ" },
       go = { "goimports" },
       javascript = { "prettierd", "prettier", stop_after_first = true },
