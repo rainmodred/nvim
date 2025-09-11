@@ -28,9 +28,9 @@ return { -- Autoformat
         }
       end
     end,
-    -- formatters = {
-    --   biome = { require_cwd = true },
-    -- },
+    formatters = {
+      biome = { require_cwd = true },
+    },
     formatters_by_ft = {
       lua = { "stylua" },
       html = { "prettierd", "prettier", stop_after_first = true },
