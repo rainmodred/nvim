@@ -26,7 +26,7 @@ return {
 
         --TODO: check
         map("<leader>ds", require("fzf-lua").lsp_document_symbols, "[D]ocument [S]ymbols")
-        map("<leader>ws", require("fzf-lua").lsp_workspace_symbols, "[W]orkspace [S]ymbols")
+        map("<leader>ws", require("fzf-lua").lsp_live_workspace_symbols, "[W]orkspace [S]ymbols")
 
         map("gt", require("fzf-lua").lsp_typedefs, "[G]oto [T]ype Definition")
 
