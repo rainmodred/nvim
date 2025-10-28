@@ -45,10 +45,9 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
---TODO: remove
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "*",
---   callback = function()
---     vim.opt.formatoptions:remove({ "o" })
---   end,
--- })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    vim.opt.formatoptions:remove({ "o" })
+  end,
+})
