@@ -51,3 +51,19 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt.formatoptions:remove({ "o" })
   end,
 })
+
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "FocusGained" }, {
+  pattern = "*",
+  callback = function()
+    vim.cmd("checktime")
+  end,
+})
+
+-- Optional: Show notification when file changes
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+  pattern = "*",
+  callback = function()
+    vim.notify("File changed on disk, buffer updated", vim.log.levels.INFO)
+  end,
+})
