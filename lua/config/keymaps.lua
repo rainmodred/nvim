@@ -47,6 +47,8 @@ vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("n", "<C-p>", "<cmd>FzfLua files<CR>", { desc = "Git Files (Root Dir)" })
 --TODO: use git files?
 -- vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<CR>", { desc = "Find Files (Root Dir)" })
+
+vim.keymap.set("n", "<leader>sr", "<cmd>FzfLua lsp_references<CR>", { desc = "References" })
 vim.keymap.set("n", "<leader>sg", "<cmd>FzfLua live_grep<CR>", { desc = "Live Grep" })
 vim.keymap.set("n", "<leader>sb", "<cmd>FzfLua buffers<CR>", { desc = "Buffer Lines" })
 vim.keymap.set("n", "<leader>sh", "<cmd>FzfLua help_tags<CR>", { desc = "Search help" })
