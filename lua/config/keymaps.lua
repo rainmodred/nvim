@@ -56,6 +56,9 @@ vim.keymap.set("n", "<leader>sk", "<cmd>FzfLua keymaps<CR>", { desc = "Search Ke
 vim.keymap.set("n", "<leader>sw", "<cmd>FzfLua grep_cword<CR>", { desc = "Grep cword" })
 vim.keymap.set("n", "<leader>sd", "<cmd>FzfLua diagnostics_document<CR>>", { desc = "Document Diagnostics" })
 vim.keymap.set("n", "<leader>sD", "<cmd>FzfLua diagnostics_workspace<CR>", { desc = "Workspace Diagnostics" })
+vim.keymap.set("n", "<leader>sv", "<cmd>FzfLua resume<CR>", { desc = "Resume" })
 -- Split
 vim.keymap.set("n", "<leader>-", "<cmd>split<CR>", { desc = "Split below" })
 vim.keymap.set("n", "<leader>|", "<cmd>vsplit<CR>", { desc = "Split right" })
+
+vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { silent = true })
