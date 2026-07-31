@@ -54,7 +54,7 @@ vim.keymap.set("n", "<leader>ss", "<cmd>FzfLua buffers<CR>", { desc = "Buffer Li
 vim.keymap.set("n", "<leader>sh", "<cmd>FzfLua help_tags<CR>", { desc = "Search help" })
 vim.keymap.set("n", "<leader>sk", "<cmd>FzfLua keymaps<CR>", { desc = "Search Keymaps" })
 vim.keymap.set("n", "<leader>sw", "<cmd>FzfLua grep_cword<CR>", { desc = "Grep cword" })
-vim.keymap.set("n", "<leader>sd", "<cmd>FzfLua diagnostics_document<CR>>", { desc = "Document Diagnostics" })
+vim.keymap.set("n", "<leader>sd", "<cmd>FzfLua diagnostics_document<CR>", { desc = "Document Diagnostics" })
 vim.keymap.set("n", "<leader>sD", "<cmd>FzfLua diagnostics_workspace<CR>", { desc = "Workspace Diagnostics" })
 vim.keymap.set("n", "<leader>sv", "<cmd>FzfLua resume<CR>", { desc = "Resume" })
 -- Split
